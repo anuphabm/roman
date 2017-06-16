@@ -87,9 +87,10 @@ public class RomanCalculator {
     public static String calulator(String calRoman) {
         if (calRoman.contains("+")) {
             String split[] = calRoman.split("\\+");
-            int roman1 = romanToInteger(split[0]);
-            int roman2 = romanToInteger(split[1]);
-            int result = roman1 + roman2;
+            int result = 0;
+            for(String romanbuff: split){
+                result += romanToInteger(romanbuff);
+            }
             return toRoman(result);
         }
         return "";
@@ -135,6 +136,7 @@ public class RomanCalculator {
                         break;
                     case 3:
                         flag = false;
+                        System.out.println("Exit program Thank!");
                         break;
                 }
             } else {
